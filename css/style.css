@@ -1,0 +1,415 @@
+:root {
+    --primary-blue: #326698;
+    --primary-dark: #204569;
+    --accent-yellow: #f1c40f;
+    --accent-green: #27ae60;
+    --accent-red: #e74c3c;
+    --bg-page: #f0f4f8;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-page);
+    font-family: 'Poppins', sans-serif;
+    color: #2d3436;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header Atas Pusmendik */
+.top-header {
+    background: url("https://pusmendik.kemendikdasmen.go.id/tka/images/bg-top.png") left center / contain no-repeat #326698;
+    height: 120px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1030;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+.header-logo-badge {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 4px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    height: 54px;
+    width: 54px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-logo-badge img {
+    max-height: 100%;
+    max-width: 100%;
+    border-radius: 6px;
+}
+
+/* Container Card Pusmendik */
+#formContent {
+    border-radius: 14px;
+    background: #ffffff;
+    padding: 0;
+    max-width: 480px;
+    width: 100%;
+    box-shadow: 0 20px 45px rgba(50, 102, 152, 0.18);
+    background-image: url('https://pusmendik.kemendikdasmen.go.id/tka/images/logo-w.png');
+    background-size: 260px;
+    background-repeat: no-repeat;
+    background-position: top right;
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    position: relative;
+}
+
+.form-content-wide {
+    max-width: 100% !important;
+}
+
+/* Input Form Pusmendik Modern */
+input[type=text], input[type=password], select.form-control {
+    border: none;
+    border-bottom: 2px solid #e2e8f0;
+    border-radius: 0;
+    color: #2d3748;
+    font-size: 14px;
+    background: transparent;
+    transition: all 0.25s ease;
+    height: calc(1.5em + .75rem + 8px);
+}
+
+input[type=text]:focus, input[type=password]:focus, select.form-control:focus {
+    border-bottom-color: #326698;
+    box-shadow: none;
+    outline: none;
+    background: transparent;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    0% { opacity: 0; transform: translate3d(0, -25px, 0); }
+    100% { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+.fadeInDown { animation: fadeInDown 0.6s cubic-bezier(0.16, 1, 0.3, 1) both; }
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+.fadeIn { animation: fadeIn 0.5s ease-in forwards; }
+
+/* Custom Radio / Checkbox Pusmendik (icheck-primary style) */
+.icheck-primary input[type="radio"], 
+.icheck-primary input[type="checkbox"] {
+    display: none;
+}
+
+.icheck-primary label {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    border: 2px solid #b2bec3;
+    border-radius: 50%;
+    background: #fff;
+    cursor: pointer;
+    position: relative;
+    margin: 0;
+    vertical-align: middle;
+    transition: all 0.2s ease;
+}
+
+.icheck-primary input[type="radio"]:checked + label {
+    border-color: #326698;
+    background: #326698;
+}
+
+.icheck-primary input[type="radio"]:checked + label::after {
+    content: '';
+    position: absolute;
+    width: 9px;
+    height: 9px;
+    background: #fff;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.table-opsi-row {
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    border-radius: 8px;
+}
+
+.table-opsi-row:hover {
+    background-color: #f1f7fc;
+}
+
+.table-opsi-row.selected-option {
+    background-color: #e8f3fe;
+}
+
+.opsi-letter-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 13px;
+    background: #edf2f7;
+    color: #4a5568;
+    margin-right: 10px;
+    flex-shrink: 0;
+}
+
+.table-opsi-row.selected-option .opsi-letter-badge {
+    background: #326698;
+    color: #ffffff;
+}
+
+.cfont {
+    cursor: pointer;
+    color: #718096;
+    padding: 3px 8px;
+    border-radius: 4px;
+    display: inline-block;
+    transition: all 0.2s;
+    user-select: none;
+}
+.cfont:hover {
+    background: #edf2f7;
+    color: #2d3748;
+}
+.cfont.active {
+    font-weight: 700;
+    color: #326698;
+    background: #e2e8f0;
+}
+
+.view-section {
+    display: none;
+    width: 100%;
+}
+.view-section.active {
+    display: block;
+}
+
+/* Main Wrapper */
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 100vh;
+    padding: 135px 15px 40px;
+}
+
+/* Buttons Styling */
+.btn-pusmendik {
+    background-color: #326698;
+    border-color: #326698;
+    color: #ffffff;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+.btn-pusmendik:hover {
+    background-color: #244b70;
+    border-color: #244b70;
+    color: #ffffff;
+    transform: translateY(-1px);
+}
+
+/* Token Display Box */
+.token-card {
+    background: linear-gradient(135deg, #ffffff 0%, #f7fafc 100%);
+    border-left: 5px solid #326698;
+}
+
+/* Grid Nomor Soal */
+.nomor-soal-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(54px, 1fr));
+    gap: 10px;
+    padding: 15px 5px;
+}
+
+.btn-nomor-soal {
+    height: 54px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #cbd5e0;
+    background: #ffffff;
+    color: #2d3748;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-decoration: none !important;
+    user-select: none;
+}
+
+.btn-nomor-soal:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.btn-nomor-soal.current {
+    border: 3px solid #326698 !important;
+    box-shadow: 0 0 0 3px rgba(50, 102, 152, 0.25);
+}
+
+.btn-nomor-soal.answered {
+    background: #2d3748;
+    color: #ffffff;
+    border-color: #2d3748;
+}
+
+.btn-nomor-soal.ragu {
+    background: #f39c12 !important;
+    color: #ffffff !important;
+    border-color: #e67e22 !important;
+}
+
+.btn-nomor-soal .ans-code {
+    position: absolute;
+    bottom: 2px;
+    right: 3px;
+    font-size: 11px;
+    font-weight: bold;
+    background: rgba(255,255,255,0.25);
+    padding: 0 4px;
+    border-radius: 3px;
+    line-height: 1.2;
+}
+
+.btn-nomor-soal.answered .ans-code {
+    color: #f1c40f;
+    background: rgba(0,0,0,0.3);
+}
+
+.btn-nomor-soal.ragu .ans-code {
+    color: #ffffff;
+    background: rgba(0,0,0,0.3);
+}
+
+/* Timer Indicator */
+.timer-warning {
+    animation: pulse-danger 1s infinite alternate;
+    color: #e74c3c !important;
+    font-weight: bold !important;
+}
+@keyframes pulse-danger {
+    from { opacity: 0.7; }
+    to { opacity: 1; transform: scale(1.03); }
+}
+
+/* Scrollbar Halus */
+.custom-scroll::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+.custom-scroll::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+.custom-scroll::-webkit-scrollbar-thumb {
+    background: #cbd5e0;
+    border-radius: 4px;
+}
+.custom-scroll::-webkit-scrollbar-thumb:hover {
+    background: #a0aec0;
+}
+
+/* Rekapitulasi Card */
+.score-box {
+    background: linear-gradient(135deg, #326698 0%, #1a365d 100%);
+    border-radius: 14px;
+    color: #ffffff;
+    padding: 25px;
+    box-shadow: 0 10px 25px rgba(50, 102, 152, 0.3);
+}
+
+/* Mode Selection Pills */
+.mode-option-card {
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: center;
+    background: #ffffff;
+}
+
+.mode-option-card:hover {
+    border-color: #326698;
+    background: #f8fafc;
+}
+
+.mode-option-card.active {
+    border-color: #326698;
+    background: #e8f3fe;
+    box-shadow: 0 4px 10px rgba(50, 102, 152, 0.15);
+}
+
+.mode-option-card input[type="radio"] {
+    display: none;
+}
+
+/* Pembahasan Box Styling */
+.pembahasan-item {
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    background: #ffffff;
+    margin-bottom: 16px;
+    padding: 18px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+}
+
+.pembahasan-item.correct {
+    border-left: 5px solid #27ae60;
+}
+
+.pembahasan-item.incorrect {
+    border-left: 5px solid #e74c3c;
+}
+
+.pembahasan-item.empty {
+    border-left: 5px solid #718096;
+}
+
+.explanation-box {
+    background: #f8fafc;
+    border-left: 3px solid #326698;
+    border-radius: 6px;
+    padding: 12px 16px;
+    margin-top: 12px;
+    font-size: 14px;
+}
+
+/* Media Print */
+@media print {
+    .top-header, .btn, .no-print, nav, header {
+        display: none !important;
+    }
+    .wrapper {
+        padding: 0 !important;
+    }
+    #viewHasil {
+        display: block !important;
+    }
+    .card, .pembahasan-item {
+        border: 1px solid #ccc !important;
+        box-shadow: none !important;
+        page-break-inside: avoid;
+    }
+}
